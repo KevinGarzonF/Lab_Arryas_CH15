@@ -19,7 +19,15 @@
 
 function cancelarUltimo(pedido) {
   // Tu código aquí
+  if (pedido.length === 0) {
+    return "El pedido está vacío";
+  }
+  const platoCancelado = pedido.pop();
+  return (`Se canceló: ${platoCancelado.nombre}`);
 }
+
+console.log(cancelarUltimo([{ nombre: "Bandeja paisa" }, { nombre: "Limonada de coco" }]));
+console.log(cancelarUltimo([]));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cancelarUltimo };
