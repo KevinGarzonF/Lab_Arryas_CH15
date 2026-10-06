@@ -16,10 +16,26 @@
 //
 // Pista: arreglo vacío → for → push de un texto → return al final.
 // ============================================================
+const menu = [
+  { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+  { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+  { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+  { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+  { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+];
 
 function cartaNumerada(menu) {
   // Tu código aquí
+  const listas = [];
+  
+  for (let i= 0; i < menu.length; i++) {
+    const plato = menu[i];
+    listas.push(`${i}. ${plato.nombre} · $${plato.precio}`);
+  }
+  
+  return listas;
 }
+console.log(cartaNumerada(menu));
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
